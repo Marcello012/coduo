@@ -1,0 +1,106 @@
+:root {
+  --bg: #0b0f12;
+  --surface: #11161b;
+  --muted: #1a2127;
+  --text: #e6eef6;
+  --text-muted: #a8b2be;
+  --primary: #4cc2ff;
+  --primary-600: #34a3db;
+  --accent: #7efcf2;
+  --success: #19d27c;
+  --warning: #ffcc66;
+  --danger:  #ff6b6b;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+  --radius: 18px;
+}
+html[data-theme="light"] {
+  color-scheme: light;
+  --bg: #f7fafc; --surface: #ffffff; --muted: #f0f3f7;
+  --text: #12171c; --text-muted: #475463;
+  --primary: #0066cc; --primary-600: #0053a6; --accent: #00c4b3;
+  --success: #10b981; --warning: #d97706; --danger: #ef4444;
+  --shadow: 0 10px 26px rgba(16,24,40,.08);
+}
+body { background: var(--bg); color: var(--text); }
+.section { padding: 90px 0; }
+.card { background: var(--surface); border: 1px solid rgba(255,255,255,.06); border-radius: var(--radius); box-shadow: var(--shadow); }
+.text-muted { color: var(--text-muted) !important; }
+.btn-primary{ background: var(--primary); border-color: var(--primary); }
+.btn-primary:hover{ background: var(--primary-600); border-color: var(--primary-600); }
+.badge-soft { background: rgba(76,194,255,.14); color: var(--primary); border: 1px solid rgba(76,194,255,.25); }
+  
+.navbar { backdrop-filter: saturate(140%) blur(8px); background: rgba(17,22,27,.65) !important; }
+.nav-link{ font-weight: 600; }
+.theme-toggle { border-radius: 999px; border: 1px solid rgba(255,255,255,.15); background: var(--muted); }
+  
+.hero { position: relative; overflow: clip;
+  background: radial-gradient(1200px 600px at 70% -10%, rgba(76,194,255,.20), transparent 60%),
+              radial-gradient(1200px 600px at -10% 30%, rgba(126,252,242,.14), transparent 60%),
+              linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,0)); }
+.hero-blob { position: absolute; inset: -20% -10% auto auto; width: 50vw; height: 50vw; filter: blur(70px); opacity: .25; background: conic-gradient(from 140deg, var(--primary), var(--accent), transparent 80%); animation: float 18s ease-in-out infinite; }
+@keyframes float { 0%,100%{ transform: translateY(0) rotate(0); } 50%{ transform: translateY(-16px) rotate(8deg); } }
+  
+.reveal { opacity: 0; transform: translateY(18px); transition: all .7s ease; }
+.reveal.in { opacity: 1; transform: none; }
+  
+.stat { background: var(--surface); border-radius: 16px; padding: 22px; text-align: center; }
+.stat h3 { font-size: 34px; margin: 0; }
+  
+.partner { height: 64px; border-radius: 12px; background: var(--muted); display: flex; align-items: center; justify-content: center; opacity: .85; }
+.partner span { color: var(--text-muted); font-weight: 600; }
+  
+footer { background: var(--surface); border-top: 1px solid rgba(255,255,255,.06); }
+  
+a { color: var(--primary); } a:hover{ color: var(--primary-600); }
+.form-control, .form-select { background: var(--muted); border: 1px solid rgba(255,255,255,.08); color: var(--text); }
+.form-control::placeholder { color: var(--text-muted); }
+  
+.chip { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); padding: 6px 10px; border-radius: 999px; font-size: .85rem; }
+
+#partnerek .partner {
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent !important; 
+  border: 0 !important;
+  box-shadow: none !important;
+  overflow: hidden;
+}
+  
+#partnerek .partner img {
+  max-height: 72px;       
+  width: auto;            
+  object-fit: contain;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+  transition: transform .25s ease; 
+}
+  
+#partnerek img:hover {
+  opacity: 1 !important;
+  filter: none !important;
+  mix-blend-mode: normal !important;
+  transform: translateY(-2px) scale(1.03);  
+}
+
+#partnerek .row { row-gap: 12px; }
+#feher{
+  color: black;
+}
+
+#csapat img {
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+#csapat img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,.25);
+}
+#csapat h4 {
+  margin-top: 10px;
+  color: var(--primary);
+}
